@@ -1,0 +1,9 @@
+<component name="libraryTable">
+  <library name="glpk-java">
+    <CLASSES>
+      <root url="jar://$PROJECT_DIR$/lib/glpk-java.jar!/" />
+    </CLASSES>
+    <JAVADOC />
+    <SOURCES />
+  </library>
+</component>

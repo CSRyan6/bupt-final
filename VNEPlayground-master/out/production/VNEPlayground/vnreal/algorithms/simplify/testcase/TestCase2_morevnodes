@@ -1,0 +1,66 @@
+
+        // Virtual network 0
+        VirtualNetwork vn0 = new VirtualNetwork(1);
+        vns.add(vn0);
+
+        VirtualNode vA = new VirtualNode(1);
+        cpuDem = new CpuDemand(vA);
+        cpuDem.setDemandedCycles(25.0);
+        assertTrue(vA.add(cpuDem));
+        assertTrue(vn0.addVertex(vA));
+
+        VirtualNode vB = new VirtualNode(1);
+        cpuDem = new CpuDemand(vB);
+        cpuDem.setDemandedCycles(27.5);
+        assertTrue(vB.add(cpuDem));
+        assertTrue(vn0.addVertex(vB));
+
+        VirtualNode vC = new VirtualNode(1);
+        cpuDem = new CpuDemand(vC);
+        cpuDem.setDemandedCycles(2.5);
+        assertTrue(vC.add(cpuDem));
+        assertTrue(vn0.addVertex(vC));
+
+
+        VirtualNode vD = new VirtualNode(1);
+        cpuDem = new CpuDemand(vD);
+        cpuDem.setDemandedCycles(21.5);
+        assertTrue(vD.add(cpuDem));
+        assertTrue(vn0.addVertex(vD));
+
+
+        VirtualLink eAB = new VirtualLink(1);
+        bwDem = new BandwidthDemand(eAB);
+        bwDem.setDemandedBandwidth(1);
+        assertTrue(eAB.add(bwDem));
+        assertTrue(vn0.addEdge(eAB, vA, vB));
+
+        VirtualLink eAC = new VirtualLink(1);
+        bwDem = new BandwidthDemand(eAC);
+        bwDem.setDemandedBandwidth(2);
+        assertTrue(eAC.add(bwDem));
+        assertTrue(vn0.addEdge(eAC, vA, vC));
+
+        VirtualLink eBC = new VirtualLink(1);
+        bwDem = new BandwidthDemand(eBC);
+        bwDem.setDemandedBandwidth(5);
+        assertTrue(eBC.add(bwDem));
+        assertTrue(vn0.addEdge(eBC, vB, vC));
+
+        VirtualLink eAD = new VirtualLink(1);
+        bwDem = new BandwidthDemand(eAD);
+        bwDem.setDemandedBandwidth(6);
+        assertTrue(eAD.add(bwDem));
+        assertTrue(vn0.addEdge(eAD, vA, vD));
+
+        VirtualLink eBD = new VirtualLink(1);
+        bwDem = new BandwidthDemand(eBD);
+        bwDem.setDemandedBandwidth(4);
+        assertTrue(eBD.add(bwDem));
+        assertTrue(vn0.addEdge(eBD, vB, vD));
+
+        VirtualLink eCD = new VirtualLink(1);
+        bwDem = new BandwidthDemand(eCD);
+        bwDem.setDemandedBandwidth(3);
+        assertTrue(eCD.add(bwDem));
+        assertTrue(vn0.addEdge(eCD, vC, vD));

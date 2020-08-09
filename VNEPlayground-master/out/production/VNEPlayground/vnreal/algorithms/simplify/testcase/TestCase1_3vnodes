@@ -1,0 +1,58 @@
+/*
+
+// This test case has 3 vnodes, which is only a simple case to test the link reduction algorithm
+        // Virtual network 0
+        VirtualNetwork vn0 = new VirtualNetwork(1);
+        vns.add(vn0);
+
+        VirtualNode vA = new VirtualNode(1);
+        idDem = new IdDemand(vA);
+        idDem.setDemandedId(Integer.toString(1));
+        assertTrue(vA.add(idDem));
+        cpuDem = new CpuDemand(vA);
+        cpuDem.setDemandedCycles(25.0);
+        assertTrue(vA.add(cpuDem));
+        assertTrue(vn0.addVertex(vA));
+
+        VirtualNode vB = new VirtualNode(1);
+        idDem = new IdDemand(vB);
+        idDem.setDemandedId(Integer.toString(3));
+        assertTrue(vB.add(idDem));
+        cpuDem = new CpuDemand(vB);
+        cpuDem.setDemandedCycles(27.5);
+        assertTrue(vB.add(cpuDem));
+        assertTrue(vn0.addVertex(vB));
+
+        VirtualNode vC = new VirtualNode(1);
+        idDem = new IdDemand(vC);
+        idDem.setDemandedId(Integer.toString(5));
+        assertTrue(vC.add(idDem));
+        cpuDem = new CpuDemand(vC);
+        cpuDem.setDemandedCycles(2.5);
+        assertTrue(vC.add(cpuDem));
+        assertTrue(vn0.addVertex(vC));
+
+
+
+        VirtualLink eAB = new VirtualLink(1);
+        bwDem = new BandwidthDemand(eAB);
+        bwDem.setDemandedBandwidth(0.5);
+        assertTrue(eAB.add(bwDem));
+        assertTrue(vn0.addEdge(eAB, vA, vB));
+
+        VirtualLink eAC = new VirtualLink(1);
+        bwDem = new BandwidthDemand(eAC);
+        bwDem.setDemandedBandwidth(0.5);
+        assertTrue(eAC.add(bwDem));
+        assertTrue(vn0.addEdge(eAC, vA, vC));
+
+        VirtualLink eBC = new VirtualLink(1);
+        bwDem = new BandwidthDemand(eBC);
+        bwDem.setDemandedBandwidth(1.5);
+        assertTrue(eBC.add(bwDem));
+        assertTrue(vn0.addEdge(eBC, vB, vC));
+
+
+
+
+*/
